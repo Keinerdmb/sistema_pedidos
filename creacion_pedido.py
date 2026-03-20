@@ -20,4 +20,6 @@ def show_orders(orders, customers, products):
             print("product:", product_name)
             print("quantity:", quantity)
             print("total:", round(total, 2))
-            
+            print("=======================")
+
+
