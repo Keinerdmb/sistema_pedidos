@@ -19,7 +19,7 @@ def load_products(products):
 
 #funtion show products
 def show_products(products):
-    print("/n=== MENU BEBIDAS ===")
+    print("\n=== MENU BEBIDAS ===")
     for product_id in products:
         name, price = products[product_id] 
         print(product_id, "-", name, "$", price)
@@ -117,7 +117,7 @@ def main():
     option = 0
 
     while option != 4:
-        print("/n=== MENU ===")
+        print("\n=== MENU ===")
         print("1. Registar cliente")
         print("2. Crear pedido")
         print("3. Reporte final")
