@@ -28,7 +28,7 @@ def show_orders(orders, customers, products):
     for order_id in orders:
         customer_id, product_id, quantity = orders[order_id]
 
-        # Validaciones
+        # Validate
         if customer_id not in customers:
             result += f"\nPedido {order_id} tiene cliente desconocido.\n"
             continue
@@ -74,7 +74,7 @@ def final_report(orders, customers, products):
     for order_id in orders:
         customer_id, product_id, quantity = orders[order_id]
 
-        # Ignorar pedidos incompletos
+        # Ignore incomplete orders
         if customer_id not in customers or product_id not in products:
             continue
 
@@ -139,13 +139,13 @@ def main():
             oid = input("ID del pedido: ")
             cid = input("ID del cliente: ")
 
-            # validar cliente
+            # validate customer
             if cid not in customers:
                 print(" Cliente no registrado.")
                 continue
 
             pid = input("ID del producto: ")
-            # validar producto
+            # validate product
             if pid not in products:
                 print(" Producto no registrado.")
                 continue
