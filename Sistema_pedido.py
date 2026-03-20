@@ -7,46 +7,46 @@ orders = {}
 def register_cutomer(customers, customer_id, name):
     #we save the client as a tuple(name)
     customers[customer_id] = (name,)
-    print("customer registered succesfully.")
+    print("Cliente registrado con exito.")
 
 #funtion add products (drink's menu)
 def load_products(products):
     #drink's menu (ID: (name,price))
-    products[1] = ("water", 2000)
+    products[1] = ("Agua", 2000)
     products[2] = ("Soda", 3500)
-    products[3] = ("Juice", 4000)
-    products[4] = ("coffee", 2500)
+    products[3] = ("Jugo", 4000)
+    products[4] = ("Café", 2500)
 
 #funtion show products
 def show_products(products):
-    print("/n=== DRINK MENU ===")
+    print("/n=== MENU BEBIDAS ===")
     for product_id in products:
         name, price = products[product_id] 
         print(product_id, "-", name, "$", price)
 
 #funtion create a order 
 def create_order(orders, customers, products, order_id):
-    customer_id = int(input("Enter customer ID: "))
+    customer_id = int(input("Ingrese ID del cliente: "))
 
     #validate client
     if customer_id not in customers:
-        print("Customer does not exit. ")
+        print("Cliente no existe.")
         return
     
     #show menu
     show_products(products)
 
-    product_id = int(input("choose a product "))
-    quantity = int(input("Enter quantity: "))
+    product_id = int(input("Escoge un producto "))
+    quantity = int(input("Ingrese cantidad: "))
 
     #validate product
     if product_id not in products:
-        print("Invalid product.")
+        print("Producto invalido.")
         return
     
     #save the order as a tuple
     orders[order_id] = (customer_id, product_id, quantity)
-    print("Order added succesfully")
+    print("Pedido añadido  correctamente.")
 
 #funtion calculate income    
 def calculate_daily_income(orders, products):
@@ -64,7 +64,7 @@ def calculate_daily_income(orders, products):
 #funtion final report
 def final_report(orders, customers, products):
     if len(orders) == 0:
-        print("NO orders registered.")
+        print("No hay pedidos registrados.")
         return
 
     total_orders = len(orders)
@@ -95,17 +95,17 @@ def final_report(orders, customers, products):
         products_sold[product_name] += quantity
 
     #show report
-    print("\n===== FINAL REPORT =====")
-    print("Total orders:", total_orders)
-    print("Total income:", round(total_income, 2))
+    print("\n===== REPORTE FINAL =====")
+    print("Total pedidos:", total_orders)
+    print("Total ingresos:", round(total_income, 2))
 
-    print("\nOrders by customer:")
+    print("\nPedidos por cliente:")
     for customer in orders_by_customer:
-        print("-", customer, ":", orders_by_customer[customer], "orders")
+        print("-", customer, ":", orders_by_customer[customer], "pedidos")
 
-    print("\nProducts sold:")
+    print("\nProductos vendidos:")
     for product in products_sold:
-        print("-", product, ":", products_sold[product], "units")
+        print("-", product, ":", products_sold[product], "unidades")
 
     print("========================")
 
@@ -118,16 +118,16 @@ def main():
 
     while option != 4:
         print("/n=== MENU ===")
-        print("1. Register customer")
-        print("2. Create order")
-        print("3. Show final report")
-        print("4. Exit")
+        print("1. Registar cliente")
+        print("2. Crear pedido")
+        print("3. Reporte final")
+        print("4. salida")
 
-        option = int(input("Choose an option: "))
+        option = int(input("Escoge una opción: "))
 
         if option == 1:
-            customer_id = int(input("Enter customer ID: "))
-            name = input("enter customer name: ")
+            customer_id = int(input("Ingrese ID del cliente: "))
+            name = input("Ingrese nombre del cliente: ")
             register_cutomer(customers, customer_id, name)
 
         elif option == 2:
@@ -138,10 +138,10 @@ def main():
             final_report(orders, customers, products)
 
         elif option == 4:
-            print("Exiting program...")
+            print("Saliendo del programa...")
 
         else:
-            print("Invalid option.")
+            print("Opción invalida.")
 
 #run program
 main()
