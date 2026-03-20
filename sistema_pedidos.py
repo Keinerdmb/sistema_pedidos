@@ -13,5 +13,3 @@ def register_customer(customers, customer_id, name, email):
 def register_products(products, product_id, name, price):
     products[product_id]= (name, price)
     return products
-
-
