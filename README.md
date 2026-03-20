@@ -13,7 +13,9 @@ The program uses **dictionaries** and **tuples** only
 The system uses three main dictonaries:
 
 custumers = {}
+
 products = {}
+
 orders = {}
 
 **The dictonary one** (customers) store customer information
